@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+    <head>
+        <title> More templating</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <style>
+            .myComp{
+                border:1px solid black;
+                height:250px;
+                background-color:rgb(236,222,165);
+            }
+            .myComp:hover{
+                background-color:rgb(230,221,100);
+            }
+            
+            .centerx{
+                position:relative;
+                left:50%;
+                transform:translate(-50%,0);
+                -webkit-transform:translate(-50%,0);
+                -ms-transform:translate(-50%,0);
+                font-size:200%;
+                margin-top:5%;
+            }
+            .centerx:hover{
+                transform:scale(2,2);
+                transition:all 1s;
+            }
+        </style>
+        <template>
+            <div class="col-xs-12 col-md-6 myComp" >
+                <i class="glyphicon centerx"></i>
+                <h3 class="text-center" id="comp-h1">Component 1</h3>
+                <p class="text-center" id="comp-p">This is where text goes</p>
+            </div>
+        </template>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row" id="row1">
+                
+            </div>
+        </div>
+        <script>
+            var template = document.querySelector('template');
+            var content = document.importNode(template.content, true);
+            var content2 = document.importNode(template.content, true);
+            var content3 = document.importNode(template.content, true);
+            var content4 = document.importNode(template.content, true);
+            
+           
+            content.querySelector("h3").textContent = "Fire Man";
+            content2.querySelector("h3").textContent = "Fly";
+            content3.querySelector("h3").textContent = "Agend";
+            content4.querySelector("h3").textContent = "Portfolio";
+            
+            
+            content.querySelector("p").textContent = "Se me quema la casa llama al 911";
+            content2.querySelector("p").textContent = "!Volar el dream de cualquier cubano.";
+            content3.querySelector("p").textContent = "Actualiza tu agenda";
+            content4.querySelector("p").textContent = "Guarda tu informacion";
+            
+            
+            content.querySelector("i").className += " glyphicon-fire";
+            content2.querySelector("i").className += " glyphicon-plane";
+            content3.querySelector("i").className += " glyphicon-calendar";
+            content4.querySelector("i").className += " glyphicon-briefcase";
+            
+            document.getElementById("row1").appendChild(content);
+            document.getElementById("row1").appendChild(content2);
+            document.getElementById("row1").appendChild(content3);
+            document.getElementById("row1").appendChild(content4);
+            
+            
+        </script>
+    </body>
+</html>

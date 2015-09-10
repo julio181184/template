@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+       <link rel="stylesheet"               href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+        <title> Template html </title>
+        
+        <template>            
+            <ul class="nav-wrapper purple darken-4">
+                <li><a href="http://jrodriguez.fvi-grad.com/blog/"> Blog </a></li>
+                <li><a href="http://jrodriguez.fvi-grad.com/pag_army/"> Military </a></li>
+                <li><a href="http://jrodriguez.fvi-grad.com/resume/"> Resume </a></li>
+                <li><a href="http://jrodriguez.fvi-grad.com/unit2Test/form_prueba.html"> Form </a></li>
+            </ul>    
+        </template>
+        
+    </head>
+    
+    <body>
+        <nav id="hdr"></nav>
+        <div>
+            <h1 id="title"> This is my site content </h1>
+            <p> Template-generated markup will go above the header and below this line.</p>
+        </div>
+        <nav id="ftr"></nav>
+        <script>
+            var template = document.querySelector('template');
+            var content =  document.importNode(template.content, true);
+            var content2 =  document.importNode(template.content, true);
+            document.getElementById("hdr").appendChild(content);
+            document.getElementById("ftr").appendChild(content2);
+            
+        </script>
+        
+    </body>  
+    
+</html> 
